@@ -12,7 +12,8 @@
     "dev": "rollup -c -w",
     "build": "rollup -c",
     "lint": "yarn eslint",
-    "test": "jest"
+    "test": "jest",
+    "sv": "standard-version"
   },
   "repository": "git@github.com:danielkov/single-package.git",
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
@@ -24,6 +25,7 @@
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@types/jest": "25.1.2",
+    "@types/node": "13.7.0",
     "babel-jest": "25.1.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb-typescript-prettier": "1.4.2",
@@ -35,13 +37,19 @@
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-peer-deps-external": "2.2.2",
     "rollup-plugin-typescript2": "0.25.3",
-    "typescript": "3.7.5",
-    "@types/node": "13.7.0",
-    "ts-jest": "^25.2.0"
+    "standard-version": "7.1.0",
+    "ts-jest": "^25.2.0",
+    "typescript": "3.7.5"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "yarn lint --fix"
+    ]
+  },
+  "release": {
+    "branches": [
+      "master",
+      "next"
     ]
   }
 }

@@ -1,4 +1,4 @@
-# Discolor - Colorize Terminal Output
+# 🎨 Discolor - Colorize Terminal Output
 
 This is a very minimal library - 29 lines to easily add 9 colors to your terminal output.
 
