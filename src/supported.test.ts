@@ -1,11 +1,9 @@
-import './supported';
+process.env.TERM = 'cygwin';
+
+// eslint-disable-next-line import/first
 import { black, red, green, yellow, blue, magenta, cyan, white, gray } from '.';
 
 describe(`supported terminal`, () => {
-  beforeEach(() => {
-    process.env.TERM = 'cygwin';
-  });
-
   it(`black in supported terminal`, () => {
     expect(black('test text')).toBe(`\u001b[30mtest text\u001b[39m`);
   });

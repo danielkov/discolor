@@ -1,10 +1,9 @@
-import './unsupported';
+process.env.TERM = 'unsupported';
+
+// eslint-disable-next-line import/first
 import { black, red, green, yellow, blue, magenta, cyan, white, gray } from '.';
 
 describe(`unsupported terminal`, () => {
-  beforeEach(() => {
-    process.env.TERM = 'unsupported';
-  });
   it(`black in unsupported terminal`, () => {
     expect(black('test text')).toBe('test text');
   });
