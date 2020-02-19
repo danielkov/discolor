@@ -25,11 +25,17 @@ jobs:
         with:
           node-version: 12
           github_token: ${{ secrets.GITHUB_PAT }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm build
       - name: Commit files
         run: |
           git config --local user.email "kovacsemod@gmail.com"
           git config --local user.name "danielkov"
-          npm sv
+          npm run sv
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
