@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish Package
 
 on:
   release:
@@ -18,21 +18,21 @@ jobs:
 
   release:
     needs: [build]
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
     name: GitHub Push
     steps:
-     - uses: ad-m/github-push-action@v0.5.0
-       with:
-         node-version: 12
-     - name: Commit files
-       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        npm sv
-     - name: Push changes
-       uses: ad-m/github-push-action@master
-       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ad-m/github-push-action@v0.5.0
+        with:
+          node-version: 12
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          npm sv
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   publish-npm:
     needs: release
@@ -58,7 +58,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@your-github-username'
+          scope: "@danielkov"
       - run: npm ci
       - run: npm build
       - run: npm publish

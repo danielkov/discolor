@@ -7,12 +7,12 @@
   "module": "dist/index.module.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "/dist"
   ],
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "lint": "yarn eslint",
+    "lint": "eslint",
     "test": "jest",
     "sv": "standard-version"
   },
@@ -44,7 +44,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn lint --fix"
+      "npm run lint --fix"
     ]
   },
   "release": {
