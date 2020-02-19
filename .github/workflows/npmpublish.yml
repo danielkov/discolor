@@ -24,10 +24,11 @@ jobs:
       - uses: ad-m/github-push-action@v0.5.0
         with:
           node-version: 12
+          github_token: ${{ secrets.GITHUB_PAT }}
       - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "kovacsemod@gmail.com"
+          git config --local user.name "danielkov"
           npm sv
       - name: Push changes
         uses: ad-m/github-push-action@master
