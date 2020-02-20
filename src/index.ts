@@ -27,3 +27,5 @@ export const white = (text: string): string => {
 export const gray = (text: string): string => {
   return supported ? `\u001b[90m${text}\u001b[39m` : text;
 };
+
+export { gray as grey };
