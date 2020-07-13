@@ -38,7 +38,7 @@
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-peer-deps-external": "2.2.2",
     "rollup-plugin-typescript2": "0.25.3",
-    "standard-version": "7.1.0",
+    "standard-version": "8.0.1",
     "ts-jest": "^25.2.0",
     "typescript": "3.7.5"
   },
